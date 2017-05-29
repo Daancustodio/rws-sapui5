@@ -11,22 +11,24 @@
 		id="page"
 		navButtonPress="onNavBack" 
     	showNavButton="true" 	
-		title="{i18n>undertaking.PageTitle}">      
-    <content>
+		title="{i18n>undertaking.PageTitle}">  
+	 
+    <content>				
 
 			<Table
 				id="table"
 				width="auto"
 				class="sapUiResponsiveMargin"
-				items="{/}"
+				items="{/Undertakings}"
 				noDataText="{i18n>tableNoDataText}"
 				growing="true"
-				growingScrollToLoad="true">
+				growingScrollToLoad="true"
+				hidden="true">
 				<headerToolbar>
 					<Toolbar>
 						<Title id="tableHeader" text="{i18n>undertaking.HeaderTitle}"/>
 						<ToolbarSpacer />                        
-						<Button icon="sap-icon://add" tooltip="[i18n>undertaking.btnAddUndertaking}" press="onAddUndertaking"></Button>						
+						<!--Button icon="sap-icon://add" tooltip="[i18n>undertaking.btnAddUndertaking}" press="onAddUndertaking"></Button-->						
 					</Toolbar>
 				</headerToolbar>
 				<columns>
@@ -55,11 +57,17 @@
 								text="{StatusDesc}"/>
 							<ObjectIdentifier
 								text="{AreaTotal}"/>
-						</cells>
-                       
+						</cells>                       
 					</ColumnListItem>
 				</items>
 			</Table>
+
+			<HBox id="busyIndicator"
+				justifyContent="Center"
+				alignItems="Center" >
+				<BusyIndicator size="1.4em" />				
+				<BusyIndicator size="1.4em" />
+			</HBox>
 		</content>
 </Page>
 </mvc:View>

@@ -7,16 +7,6 @@
 		title="{i18n>masterViewTitle}">		
 
 		 <Panel backgroundDesign="Transparent">			
-			<GenericTile class="sapUiSmallMargin" header="{i18n>Menu.FinancialIndex}" press="onFinancialIndex">
-				<tileContent>
-					<TileContent>
-						<content>
-							<NumericContent nullifyValue="false" value="" icon="sap-icon://business-objects-experience"/>
-							
-						</content>
-					</TileContent>
-				</tileContent>
-			</GenericTile>
 			<GenericTile  class="sapUiSmallMargin" header="{i18n>Menu.supplier}" press="onSupliers">
 				<tileContent>
 					<TileContent>
@@ -31,6 +21,16 @@
 					<TileContent>
 						<content>						
 							<NumericContent id="undertakingsTile"  nullifyValue="false" value=""  icon="sap-icon://building"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile class="sapUiSmallMargin" header="{i18n>Menu.FinancialIndex}" press="onFinancialIndex">
+				<tileContent>
+					<TileContent>
+						<content>
+							<NumericContent nullifyValue="false" value="" icon="sap-icon://business-objects-experience"/>
+							
 						</content>
 					</TileContent>
 				</tileContent>

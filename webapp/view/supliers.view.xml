@@ -11,7 +11,7 @@
 		title="{i18n>Supliers.PageTitle}">
         <subHeader>
 			<Toolbar>
-				<SearchField width="100%" search="onBuscar" />
+				<SearchField width="100%" search="onBuscar"  placeholder="Informe o nome do parceiro"  />
 			</Toolbar>
 		</subHeader>
 <content>

@@ -5,15 +5,18 @@ sap.ui.define([
     "sap/ui/Device",
 ], function (BaseController, JSONModel,MessageToast, Device) {
     "use strict";
-    
+    function buscar(txt, view){
+
+    };
     return BaseController.extend("sapui5.demo.restservice.controller.Undertakings", {
 
         onInit: function () {
-            var view = this.getView();
+            var view = this.getView();            
             var serverUrl = "http://megaws.azurewebsites.net/api/unit/get";            
              var data = {
                 SearchValue: ""
             };
+
             jQuery.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -22,7 +25,7 @@ sap.ui.define([
                 dataType: "json",
                 success: function (oData) {
                     var qtd = oData.length;
-                    view.setModel(new JSONModel(oData));
+                    view.setModel(new JSONModel({ Undertakings: oData}));
                     if(qtd == 1)
                         MessageToast.show(qtd + " item encontrado");
                     else if(qtd < 1)
@@ -42,15 +45,23 @@ sap.ui.define([
                 dataType: "json",
                 success: function (oData) {
                     var qtd = oData.length;
-                    view.setModel(new JSONModel(oData), "StatusCollection");   
+                    view.setModel(new JSONModel({
+				        StatusCollection: [{ID:1, Description:"DEs"}]
+			        }));
                     console.log(oData)               ;
                 },
                 error: function () {                    
-                    view.setModel(new JSONModel(null, "StatusCollection"));                    
+                                       
                 }
             });
         },       
-
+        handleRefresh : function (evt) {
+			var that = this;
+			setTimeout(function () {
+				that.getView().byId("pullToRefresh").hide();
+				
+			}, 1000);
+		},
         onListPress: function (oEvent) {
             // The source is the list item that got pressed
             console.log(oEvent);
