@@ -1,0 +1,47 @@
+<mvc:View controllerName="sapui5.demo.restservice.controller.Suplieredit" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns="sap.m">
+  <Page id="page" 
+    navButtonPress="onNavPress" 
+    showNavButton="true" 
+    title="{i18n>detailTitle}">
+    <content>
+	<form:SimpleForm
+				id="form"
+				layout="ResponsiveGridLayout"
+				editable="true"
+				class="sapUiResponsiveMargin"
+				width="auto" 
+				labelSpanL="3" labelSpanM="3"
+				emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" >
+				<form:content>					
+					<Label id="codeLabel" text="{i18n>Suplier.CardCode}" />
+					<Input id="codeInput" value="{
+							path : 'CardCode',
+							type : 'sap.ui.model.type.String'
+						}" />
+					<Label id="nameLabel" text="{i18n>Suplier.CardName}" />
+					<Input id="nameInput" value="{
+							path : 'CardName',
+							type : 'sap.ui.model.type.String'
+						}" />
+					<Label id="taxLabel" text="{i18n>Suplier.TaxId}" />					
+					<Input id="taxInput" value="{
+							path : 'TaxId',
+							type : 'sap.ui.model.type.String'
+						}" />
+				</form:content>
+			</form:SimpleForm>
+    </content>
+    <footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" press="onSave" />
+				<Button text="Delete" press="onDelete" />
+			</Toolbar>
+		</footer>
+  </Page>
+</mvc:View>

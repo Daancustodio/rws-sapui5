@@ -1,0 +1,65 @@
+<mvc:View
+ height="100%" 
+    controllerName="sapui5.demo.restservice.controller.Undertakings"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"    
+	xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    >
+
+<Page
+		id="page"
+		navButtonPress="onNavBack" 
+    	showNavButton="true" 	
+		title="{i18n>undertaking.PageTitle}">      
+    <content>
+
+			<Table
+				id="table"
+				width="auto"
+				class="sapUiResponsiveMargin"
+				items="{/}"
+				noDataText="{i18n>tableNoDataText}"
+				growing="true"
+				growingScrollToLoad="true">
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{i18n>undertaking.HeaderTitle}"/>
+						<ToolbarSpacer />                        
+						<Button icon="sap-icon://add" tooltip="[i18n>undertaking.btnAddUndertaking}" press="onAddUndertaking"></Button>						
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="nameColumn"><header>
+						<Text text="{i18n>tableIDColumnTitle}" id="IDColumnTitle"/></header>
+					</Column>
+					<Column id="unitNumberColumn"><header>
+						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/></header>
+					</Column>
+					<Column id="taxNumberColumn"><header>
+						<Text text="{i18n>Undertaking.Status}" id="taxColumnTitle"/></header>
+					</Column>
+					<Column id="areaNumberColumn"><header>
+						<Text text="{i18n>Undertaking.Area}" id="areaColumnTitle"/></header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+						type="Navigation">
+						<cells>                        
+							<ObjectIdentifier
+								text="{ID}"/>
+							<ObjectIdentifier
+								text="{UndertakingName}"/>
+							<ObjectIdentifier
+								text="{StatusDesc}"/>
+							<ObjectIdentifier
+								text="{AreaTotal}"/>
+						</cells>
+                       
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+</Page>
+</mvc:View>

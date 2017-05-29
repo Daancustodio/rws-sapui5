@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="sapui5.demo.restservice.controller.Master"
+	xmlns:mvc="sap.ui.core.mvc"	
+	xmlns="sap.m">
+	<Page
+		id="page"		
+		title="{i18n>masterViewTitle}">		
+
+		 <Panel backgroundDesign="Transparent">			
+			<GenericTile class="sapUiSmallMargin" header="{i18n>Menu.FinancialIndex}" press="onFinancialIndex">
+				<tileContent>
+					<TileContent>
+						<content>
+							<NumericContent nullifyValue="false" value="" icon="sap-icon://business-objects-experience"/>
+							
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile  class="sapUiSmallMargin" header="{i18n>Menu.supplier}" press="onSupliers">
+				<tileContent>
+					<TileContent>
+						<content>
+							<NumericContent id="suplierTile"  nullifyValue="false" value="" color="#8875E7" icon="sap-icon://supplier"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+			<GenericTile class="sapUiSmallMargin" header="{i18n>Menu.undertakings}" press="onUndertakings">
+				<tileContent>
+					<TileContent>
+						<content>						
+							<NumericContent id="undertakingsTile"  nullifyValue="false" value=""  icon="sap-icon://building"/>
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
+		</Panel>		
+	</Page>
+</mvc:View>
