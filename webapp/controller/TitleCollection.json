@@ -1,0 +1,22 @@
+{
+	"TileCollection" : [
+		{
+			"icon" : "sap-icon://supplier",
+			"type" : "Monitor",
+			"title" : "i18n>Menu.supplier"
+		},
+		{
+			"icon" : "sap-icon://building",			
+			"title" : "i18n>Menu.undertakings",
+			"info" : "Overdue",
+			"infoState" : "Error"
+		},	
+		{
+			"icon" : "sap-icon://business-objects-experience",			
+			"title" : "i18n>Menu.FinancialIndex",
+			"info" : "Overdue",
+			"infoState" : "Error"
+		}
+	
+	]
+}
