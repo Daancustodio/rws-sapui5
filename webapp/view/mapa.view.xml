@@ -1,0 +1,32 @@
+<mvc:View controllerName="sapui5.demo.restservice.controller.Mapa"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core" 
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:viz="sap.viz.ui5.controls" 
+	xmlns:vbm="sap.ui.vbm"
+	height="100%" 
+	displayBlock="true">
+
+	<Panel expandable="true" expanded="{= !${device>/system/phone} }"
+		>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Traçar Rota"  />
+				<ToolbarSpacer />
+				<!--Button id="btnResize" icon="sap-icon://resize" press="onPressResize"
+					tooltip="Minimize" /-->
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<VBox class="sapUiTinyMargin">
+				<Text text="Minha localização atual"  id="textHeader"  />
+				<Input id="pontoPartida" class="controls" type="text" placeholder="Buscar Locais"/>
+				<Input id="pontoChegada" class="controls" type="text" placeholder="Qual destino?"/>
+				<Button id ="button" text="Procurar" press="actSearch"/>
+			</VBox>
+		</content>
+	</Panel>	
+	<Panel id="map_canvas" width="100%" xmlns:l="sap.ui.layout" height="100%"/>
+	
+</mvc:View>

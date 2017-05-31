@@ -21,33 +21,10 @@ sap.ui.define([
 		 * @override
 		 */
         init : function () {
+           
             // call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
-            // create the device model here
-            /*var oModel = new JSONModel(Device);
-            oModel.setDefaultBindingMode("OneWay");
-            var that = this;
-            //var oAppModel = new AppModel("/Suppliers");
-            var search = {SearchValue: "CAR"};
-            var serverUrl =  "http://megaws.azurewebsites.net/api/bindingsource/get";
-            jQuery.ajax({
-                type : "GET",
-                contentType : "application/json",
-                url :serverUrl,                
-                dataType : "json",
-                success : function(oData) {
-                    console.log(oData);
-                    //oAppModel.setData(oData);
-                    oModel.setData(oData);
-                    that.setModel(oModel);
-                },
-                error : function() {
-                    jQuery.sap.log.debug("something went wrong while retrieving the data");
-                }
-			});*/
-			
-            //this.setModel(oAppModel);
-            // create the views based on the url/hash
+           
 			this.getRouter().initialize();
         },
 

@@ -57,6 +57,9 @@ sap.ui.define([
 		onUndertakings : function(){
 			this.getRouter().navTo("undertakings");
 		},
+		onMap : function(){
+			this.getRouter().navTo("mapa");
+		},
 
 		/* =========================================================== */
 		/* internal methods                                            */

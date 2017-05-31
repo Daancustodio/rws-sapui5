@@ -99,6 +99,11 @@
 					"pattern": "undertakings",
 					"name" : "undertakings",
 					"target" : "undertakings"
+				},
+				{
+					"pattern": "mapa",
+					"name" : "mapa",
+					"target" : "mapa"
 				}
 			],
 
@@ -138,6 +143,11 @@
 				"undertakings": {
 					"viewName": "undertakings",
 					"viewId": "undertakings",
+					"viewLevel": 5
+				},
+				"mapa": {
+					"viewName": "mapa",
+					"viewId": "mapa",
 					"viewLevel": 5
 				}
 			}

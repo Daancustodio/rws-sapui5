@@ -7,13 +7,16 @@
 	<title>CRUD with REST Service</title>
     <script src="service/FakeRest.min.js"></script>
 	<script id="sap-ui-bootstrap"
-			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"			
 			data-sap-ui-libs="sap.m, sap.ui.layout"
-			data-sap-ui-theme="sap_bluecrystal"
-			data-sap-ui-preload="async"
+			data-sap-ui-theme="sap_bluecrystal"			
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"sapui5.demo.restservice": "./"}'>
+			data-sap-ui-resourceroots='{"sapui5.demo.restservice": "./", "com.googlemaps":"./", "sap.ui.vbm.sample.GeoMapBasic": "./"}'>
 	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1SFBEqHEHtw7WWeS9NP9VUAmEat8-yDU&libraries=places" type ="text/javascript">
+</script>
+
 	<script>
 
 		sap.ui.getCore().attachInit(function () {

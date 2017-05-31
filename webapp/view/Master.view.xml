@@ -35,6 +35,16 @@
 					</TileContent>
 				</tileContent>
 			</GenericTile>
+			<GenericTile class="sapUiSmallMargin" header="{i18n>Menu.Mapa}" press="onMap">
+				<tileContent>
+					<TileContent>
+						<content>
+							<NumericContent nullifyValue="false" value="" icon="sap-icon://map"/>
+							
+						</content>
+					</TileContent>
+				</tileContent>
+			</GenericTile>
 		</Panel>		
 	</Page>
 </mvc:View>
