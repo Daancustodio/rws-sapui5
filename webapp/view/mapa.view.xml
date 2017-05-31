@@ -7,7 +7,10 @@
 	xmlns:vbm="sap.ui.vbm"
 	height="100%" 
 	displayBlock="true">
-
+<Page id="page" 
+    navButtonPress="onNavPress" 
+    showNavButton="true" 
+    title="Mapa">
 	<Panel expandable="true" expanded="{= !${device>/system/phone} }"
 		>
 		<headerToolbar>
@@ -28,5 +31,5 @@
 		</content>
 	</Panel>	
 	<Panel id="map_canvas" width="100%" xmlns:l="sap.ui.layout" height="100%"/>
-	
+	</Page>
 </mvc:View>

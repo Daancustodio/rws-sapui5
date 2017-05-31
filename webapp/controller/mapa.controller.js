@@ -29,6 +29,10 @@ sap.ui.define([
 
             }
         },
+        onNavPress : function () {
+			this.myNavBack("master");
+		},
+		
         actSearch: function () {
             var map = this.map;
             var view = this.getView();
