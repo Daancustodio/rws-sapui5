@@ -1,6 +1,7 @@
 sap.ui.define([
     "sapui5/demo/restservice/controller/BaseController",
     "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast",
     "sap/ui/Device",
 ], function (BaseController, JSONModel, MessageToast, Device) {
     "use strict";
@@ -8,21 +9,23 @@ sap.ui.define([
     return BaseController.extend("sapui5.demo.restservice.controller.Mapa", {
 
         onAfterRendering: function () {
+            var that = this;
             if (!this.initialized) {
                 this.initialized = true;
                 this.geocoder = new google.maps.Geocoder();
 
-                navigator.geolocation.getCurrentPosition(position => {
-                    window.latitude1 = position.coords.latitude;
-                    window.longitude1 = position.coords.longitude;
+                navigator.geolocation.getCurrentPosition(position => {                    
                     this.criarMapa(position.coords.latitude, position.coords.longitude);
                 }
                     , function (error) {
                         switch (error.code) {
                             case error.TIMEOUT:
-                                // The user didn't accept the callout
-                                showNudgeBanner();
-                                break;
+                                MessageToast.show("Não foi possível determinar sua localização atual.");                            
+                            break;
+                            case error.POSITION_UNAVAILABLE:
+                                that.criarMapa(-16.6797147,-49.2542156);
+                                MessageToast.show("Não foi possível determinar sua localização atual, O centro de goiânia foi atribuido como sua localização.");
+                            break;
                         };
                     });
 
@@ -92,6 +95,8 @@ sap.ui.define([
         }
         ,
         criarMapa: function (latitude, longitude) {
+            window.latitude1 = latitude;
+            window.longitude1 = longitude;
             var minhaLatitudeLongitude = { lat: latitude, lng: longitude };
             var mapOptions = {
                 center: new google.maps.LatLng(latitude, longitude),

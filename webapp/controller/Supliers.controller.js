@@ -14,7 +14,7 @@ sap.ui.define([
 
         onListPress: function (oEvent) {
             // The source is the list item that got pressed
-            console.log(oEvent);
+            console.log(oEvent.getSource().getBindingContext().oData);
             this._showObject(oEvent.getSource());
         },
 

@@ -44,7 +44,7 @@
 				<items>
 					<ColumnListItem
 						type="Navigation"
-						>
+						 press="onListPress" >
 						<cells>
 							<ObjectIdentifier
 								text="{CardCode}"/>

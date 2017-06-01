@@ -64,8 +64,9 @@ sap.ui.define([
 		},
         onListPress: function (oEvent) {
             // The source is the list item that got pressed
-            console.log(oEvent);
-            this._showObject(oEvent.getSource());
+            var index = Number.parseInt(oEvent.getSource().getBindingContext().sPath.split('/')[2]);
+            var undertaking = oEvent.getSource().getBindingContext().oModel.oData.Undertakings[index];
+            this._showObject(undertaking);
         },
 
         onNavBack: function () {
@@ -75,11 +76,8 @@ sap.ui.define([
         },        
        
         _showObject: function (oItem) {
-            var oBindingContext = oItem.getBindingContext();
-            console.log(oBindingContext);
-            this.getRouter().navTo("suplieredit", {
-                id: oBindingContext.getPath().substr(1)
-            });
+                     
+            this.getRouter().navTo("editundertakings", {id:oItem.ID});
         }
     });
 

@@ -101,6 +101,11 @@
 					"target" : "undertakings"
 				},
 				{
+					"pattern": "editundertakings/{id}",
+					"name" : "editundertakings",
+					"target" : "editundertakings"
+				},
+				{
 					"pattern": "mapa",
 					"name" : "mapa",
 					"target" : "mapa"
@@ -144,6 +149,11 @@
 					"viewName": "undertakings",
 					"viewId": "undertakings",
 					"viewLevel": 5
+				},
+				"editundertakings": {
+					"viewName": "editundertakings",
+					"viewId": "editundertakings",
+					"viewLevel": 3
 				},
 				"mapa": {
 					"viewName": "mapa",
